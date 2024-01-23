@@ -41,6 +41,31 @@ while not fin_programa:
             print("Llibre " + nom + " eliminat.")
         else:
             print("El llibre " + nom + " no existeix a la llista.")
+
+    if opcion == PRESTAMO:
+        nom = input("Introdueix el nom del llibre que vols prestar: ")
+        if nom in llibreria and nom not in prestamos:
+            prestamos[nom] = "Persona que presta" 
+            print("Llibre " + nom + " prestat.")
+        if nom in prestamos:
+            print("El llibre " + nom + " ja està prestat.")
+        else:
+            print("No es pot prestar el llibre " + nom + " ja que no existeix a la llista.")
+
+    lif opcion == MOSTRAR_PRESTAMOS:
+        if prestamos:
+            for nom, persona in prestamos.items():
+                print("Nom: {}, Prestat a: {}".format(nom, persona))
+        else:
+            print("No hi ha llibres prestats.")
+
+    elif opcion == DEVOLVER_PRESTAMO:
+        nom = input("Introdueix el nom del llibre que vols retornar: ")
+        if nom in prestamos:
+            del prestamos[nom]
+            print("Llibre " + nom + " retornat.")
+        else:
+            print("El llibre " + nom + " no està actualment prestat.")
     
     if opcion == SORTIR:
         print("Programa tancat.")
