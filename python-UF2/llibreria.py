@@ -1,9 +1,13 @@
 AFEGIR = 1
 MOSTRAR = 2
 ELIMINAR = 3
-SORTIR  = 4
+PRESTAMO = 4
+MOSTRAR_PRESTAMOS = 5
+DEVOLVER_PRESTAMO = 6
+SORTIR = 7
 
-llibreria = {}
+llibreria = []
+prestamos = []
 fin_programa = False
 
 while not fin_programa:
@@ -11,9 +15,12 @@ while not fin_programa:
     print(str(AFEGIR) + ". Afegir un llibre")
     print(str(MOSTRAR) + ". Mostrar llista dels llibres")
     print(str(ELIMINAR) + ". Eliminar un llibre")
+    print(str(PRESTAMO) + ". Prestar un llibre") 
+    print(str(MOSTRAR_PRESTAMOS) + ". Mostrar llibres prestats")
+    print(str(DEVOLVER_PRESTAMO) + ". Retornar un llibre"
     print(str(SORTIR) + ". Sortir")
     
-    opcion = int(input("Escull una opció (1-4): "))
+    opcion = int(input("Escull una opció (1-7): "))
 
     if opcion == AFEGIR:
         nom = input("Introdueix el nom del llibre: ")
