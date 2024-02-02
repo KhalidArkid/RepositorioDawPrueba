@@ -23,14 +23,23 @@ Recordeu fer servir disseny top down, i mantenir un baix acoblament i una alta c
 1.4.2 Imprimir factura
 '''
 
+stock = {
+    'queso': 10,
+    'tomate': 0,
+    'pinya': 1
+}
+
 def usuario():
     print("Bienvenido a Pizzeria Kaldi")
     pizza = input(("Introduce el nombre de tu pizza: "))
     ingredientes = input("Introduce los ingredientes que quieres (separados por comas): ").split(",")
     return {"pizza": pizza, "ingredientes": ingredientes}
 
-def verificar_stock():
-    ...
+def verificar_stock(pedido):
+    for ingrediente in pedido['ingredientes']:
+        if ingrediente in stock and stock[ingrediente] !=0:
+            return True
+    return False
 
 def cocina():
     ...
@@ -51,3 +60,8 @@ def imprimir_factura():
     ...
 
 pedido_actual = usuario()
+
+if verificar_stock():
+    ...
+else:
+    print("No tenemos alguno de los ingredientes")
