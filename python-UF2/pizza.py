@@ -47,14 +47,19 @@ def cocina(pedido):
 def control_calidad():
     print("Esta todo perfecto")
 
-def atualizar_stock():
-    ...
+def actualizar_stock(stock, pedido):
+    for ingrediente in pedido['ingredientes']:
+        stock[ingrediente] -= 1
+        if stock[ingrediente] == 0:
+            stock = abastecer(stock, ingrediente, 10)
+    return stock
 
-def abastecer():
-    ...
+def abastecer(stock, ingrediente, cantidad):
+    stock[ingrediente] = cantidad
+    return stock
 
 def calculo_costes():
-    ...
+    
 
 def imprimir_factura():
     ...
@@ -63,5 +68,7 @@ pedido_actual = usuario()
 
 if verificar_stock(pedido_actual):
     cocina(pedido_actual)
+    control_calidad()
+    stock = actualizar_stock(stock, pedido_actual)
 else:
     print("No tenemos alguno de los ingredientes")
