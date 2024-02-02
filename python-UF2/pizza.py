@@ -41,11 +41,11 @@ def verificar_stock(pedido):
             return True
     return False
 
-def cocina():
-    ...
+def cocina(pedido):
+    print(f"Cocinando la pizza {pedido['pizza']} con los ingredientes {', '.join(pedido['ingrediente'])}")
 
 def control_calidad():
-    ...
+    print("Esta todo perfecto")
 
 def atualizar_stock():
     ...
@@ -61,7 +61,7 @@ def imprimir_factura():
 
 pedido_actual = usuario()
 
-if verificar_stock():
-    ...
+if verificar_stock(pedido_actual):
+    cocina(pedido_actual)
 else:
     print("No tenemos alguno de los ingredientes")
