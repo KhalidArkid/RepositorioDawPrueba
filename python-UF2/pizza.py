@@ -11,6 +11,7 @@ Recordeu fer servir disseny top down, i mantenir un baix acoblament i una alta c
 1.4 Gestión de stock
 1.5 Pagos 
 '''
+
 '''
 1.1.1 (Recibir que quiere el cliente)
 1.1.2 Verificación de stock
@@ -20,5 +21,30 @@ Recordeu fer servir disseny top down, i mantenir un baix acoblament i una alta c
 1.3.2 Abastecer
 1.4.1 Costes
 1.4.2 Imprimir factura
-
 '''
+
+def usuario():
+    ...
+
+def verificar_stock():
+    ...
+
+def cocina():
+    ...
+
+def control_calidad():
+    ...
+
+def atualizar_stock():
+    ...
+
+def abastecer():
+    ...
+
+def calculo_costes():
+    ...
+
+def imprimir_factura():
+    ...
+
+pedido_actual = usuario()
