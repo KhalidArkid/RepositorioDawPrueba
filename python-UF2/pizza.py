@@ -25,7 +25,7 @@ Recordeu fer servir disseny top down, i mantenir un baix acoblament i una alta c
 
 stock = {
     'queso': 10,
-    'tomate': 0,
+    'tomate': 10,
     'pinya': 1
 }
 

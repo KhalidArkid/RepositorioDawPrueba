@@ -25,12 +25,19 @@ Errors:
     6.1 l'usuari consulta valors sense tenir cap data enregistrada.
     6.3 Maneja casos en què l'usuari intenta registrar temperatures amb tipus de dades incorrectes.
 '''
-
-print ("Bienvenido al registro de temperaturas")
-print ("------------------------------------------")
+print("Bienvenido al registro de temperaturas")
+print("------------------------------------------")
 
 def opcions():
-    ...
+    while True:
+        print("\n1. Introducir fechas")
+        print("2. Introducir temperaturas")
+        print("3. Calcular temperatura media para la semana actual")
+        print("4. Calcular diferencia entre temperatura máxima y mínima para la semana actual")
+        print("5. Mostrar fecha actual")
+        print("6. Salir")
+        opcion = input("Introduce la opcion que quieres realizar (1-6)")
+
 
 def fechas():
     ...
@@ -44,5 +51,3 @@ def mitjana_temperatura():
 def max_min():
     ...
 
-def errors():
-    ...
