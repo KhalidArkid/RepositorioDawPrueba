@@ -62,7 +62,7 @@ def calculo_costes(pedido):
     return len(pedido['ingredientes'])
 
 def imprimir_factura():
-    
+    ...
 
 pedido_actual = interificio_usuario()
 
