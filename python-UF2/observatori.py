@@ -1,87 +1,48 @@
 '''
-Es vol fer un gestor de registre de temperatures preses setmanalment per un observatori. 
-Es pressuposa que el programa es posa en marxa a l’inici de l’any (1 de gener) i al principi de cada setmana. 
-Al llarg de 52 setmanes que té un any, es van enregistrant les temperatures mesurades cada dia de la setmana anterior (o sigui, set en total cada vegada). 
-Cada cop que es fa un registre, sabent que ha passat una setmana, el programa calcula automàticament quin dia i mes és l’actual. 
-A partir d’aquestes dades, és possible consultar en qualsevol moment quina ha estat la temperatura mitjana i la diferència entre el valor màxim i mínim enregistrats. 
-En fer-ho, la data actual també es mostra en pantalla.
-Totes aquestes accions es porten a terme usant un menú. 
-Evidentment, l’aplicació ha de ser prou robusta com per tractar casos erronis (per exemple, consultar valors quan encara no hi ha cap data enregistrada, o intentar registrar com a temperatura valors de tipus incorrecte).
+Opcions:
+    1.1 Mostra les opcions disponibles: RT,MJ,DF,FI.
+    1.2 Seleccionar una acció a realitzar.
 
-Per deixar més clar el comportament esperat, tot seguit es mostra un prototip del que s’esperaria mostrar amb la seva execució:
+Fechas
+    2.1 Introduir les feches per posar la temperatura començant desde 1 gener fins a l'últim dia de l’any
+    2.2 Només els primers dies de cada setmana (dilluns)
+	2.3 Dividir els dies en mesos i ens surt 52 setmanes
 
-Benvingut al registre de temperatures 
---------------------------------------------------------------------------
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: MJ 
-No hi ha temperatures registrades. 
+Temperatura:
+    3.1 Introdueix la temperatura per a cada dia de la setmana.
+    3.2 Es van enregistrant les temperatures mesurades.
+    3.3 El programa calcula auto el dia i el mes actual. 
 
-Benvingut al registre de temperatures 
------------------------------------------------------------------------------
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: RT 
-Escriu les temperatures d'aquesta setmana: 
-20,5 21,1 21 21,7 20,9 20,6 19,9 
+Mitjana de Temperatura:
+    4.1 Calcular la temperatura mitjana per a la setmana actual.
+    4.2 Mostra la data actual amb la mitjana.
 
-Benvingut al registre de temperatures 
------------------------------------------------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: MJ 
-Fins avui 8 de gener la mitjana ha estat de 20.814285 graus. 
+Max i Min:
+    5.1 Calcula la diferència entre la temperatura màxima i mínima per a la setmana actual.
+    5.2 Mostra la data actual amb la diferència.
 
-Benvingut al registre de temperatures 
------------------------------------------------------------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir. 
-Opció: DF 
-Fins avui 8 de gener la diferència màxima ha estat de 1.8000011 graus. 
-
-Benvingut al registre de temperatures 
--------------------------------------------------------------------------------------------- 
-[RT] Registrar temperatures setmanals. 
-[MJ] Consultar temperatura mitjana. 
-[DF] Consultar diferència màxima. 
-[FI] Sortir.
-Opció: FI
-
-
-Què heu de fer?
-
-Entregar un document on feu la descomposició per nivells fent servir el disseny top down, 
-dividint el problema en subproblemes fins arribar a un nivell on aquests ja siguin simples i resolguin una tasca molt concreta i autocontinguda.
+Errors:
+    6.1 l'usuari consulta valors sense tenir cap data enregistrada.
+    6.3 Maneja casos en què l'usuari intenta registrar temperatures amb tipus de dades incorrectes.
 '''
-RT = []
-MJ = []
-DF = []
-FI = []
-setmana1 = [20.5, 21.1, 21, 21.7, 20.9, 20.6, 19.9] 
-mitjana = 0
 
-def registre_temperatura(RT):
-    print("Benvingut al registre de Temperatura")
-    RT_input = input("Introdueix un registre de temperatura: ")
-    RT.append(RT_input)
-    return RT
+print ("Bienvenido al registro de temperaturas")
+print ("------------------------------------------")
 
-def setmana_mitjana(setmana1):
-    for i in setmana1:
-        mitjana += i
+def opcions():
+    ...
 
-    if len(setmana1) > 0:
-        mitjana /= len(setmana1)
-    return mitjana
+def fechas():
+    ...
 
-RT = registre_temperatura(RT)
-mitjana = setmana_mitjana(setmana1)
-print("La mitjana setmanal és:", mitjana)
+def temperatura():
+    ...
+
+def mitjana_temperatura():
+    ...
+
+def max_min():
+    ...
+
+def errors():
+    ...
