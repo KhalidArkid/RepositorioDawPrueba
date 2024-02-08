@@ -1,52 +1,89 @@
 '''
-Opcions:
-    1.1 Mostra les opcions disponibles: RT,MJ,DF,FI.
-    1.2 Seleccionar una acció a realitzar.
-
-Fechas
-    2.1 Introduir les feches per posar la temperatura començant desde 1 gener fins a l'últim dia de l’any
-    2.2 Només els primers dies de cada setmana (dilluns)
-	2.3 Dividir els dies en mesos i ens surt 52 setmanes
-
-Temperatura:
-    3.1 Introdueix la temperatura per a cada dia de la setmana.
-    3.2 Es van enregistrant les temperatures mesurades.
-    3.3 El programa calcula auto el dia i el mes actual. 
-
-Mitjana de Temperatura:
-    4.1 Calcular la temperatura mitjana per a la setmana actual.
-    4.2 Mostra la data actual amb la mitjana.
-
-Max i Min:
-    5.1 Calcula la diferència entre la temperatura màxima i mínima per a la setmana actual.
-    5.2 Mostra la data actual amb la diferència.
-
-Errors:
-    6.1 l'usuari consulta valors sense tenir cap data enregistrada.
-    6.3 Maneja casos en què l'usuari intenta registrar temperatures amb tipus de dades incorrectes.
+CORRECCIÓN
 '''
-print("Bienvenido al registro de temperaturas")
-print("------------------------------------------")
+#Registro de temperaturas
+temperaturas = []
+mes = 1
+dia = 1
 
-def opcions():
-    while True:
-        print("\n1. Introducir fechas")
-        print("2. Introducir temperaturas")
-        print("3. Calcular temperatura media para la semana actual")
-        print("4. Calcular diferencia entre temperatura máxima y mínima para la semana actual")
-        print("5. Mostrar fecha actual")
-        print("6. Salir")
-        opcion = input("Introduce la opcion que quieres realizar (1-6)")
-        return {opcion}
-
-def fechas():
-    for 
-
-def temperatura():
+# Problema general
+def inici():
     ...
 
-def mitjana_temperatura():
+# Primer nivel de descomposicion
+def mostrar_menu():
     ...
 
-def max_min():
+def tractar_opcion():
     ...
+
+# Segundo nivel de descomposicion
+def registro_temperaturas_semanales():
+    ...
+
+def mostrar_media():
+    ...
+
+def mostrar_diferencia():
+    ...
+
+def finalizar_ejecucion():
+    ...
+
+# Tercer nivel de descomposicion
+def leer_temperaturas_teclado():
+    lector = input("Escribe las temperaturas de esta semana: ")
+    for temperatura in lector.split():
+        temperaturas.append(float(temperatura.replace(',','.')))
+
+def calcular_media():
+    for temperatura in temperaturas:
+        suma += temperatura
+    return suma/len(temperaturas)
+
+def calcular_diferencia():
+    ...
+
+def mostrar_fecha():
+    print(dia, "de", end=' ')
+    if mes == 1:
+        print("Enero")
+    elif mes == 2:
+        print("Febrero")
+    elif mes == 3:
+        print("Marzo")
+    elif mes == 4:
+        print("Abril")
+    elif mes == 5:
+        print("Mayo")
+    elif mes == 6:
+        print("Junio")
+    elif mes == 7:
+        print("Julio")
+    elif mes == 8:
+        print("Agosto")
+    elif mes == 9:
+        print("Septiembre")
+    elif mes == 10:
+        print("Octubre")
+    elif mes == 11:
+        print("Noviembre")
+    elif mes == 12:
+        print("Diciembre")
+
+def incrementar_fecha():
+    dias_mes_actual = 0
+    if mes == 2:
+        dias_mes_actual = 28
+    elif mes == 4 or mes == 6 or mes == 9 or mes == 11:
+        dias_mes_actual = 30
+    else:
+        dias_mes_actual = 31
+    dia += 7
+    if dia > dias_mes_actual:
+        dia -= dias_mes_actual
+        mes += 1
+        if mes > 12:
+            mes = 1
+
+mostrar_fecha()
