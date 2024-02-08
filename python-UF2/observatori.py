@@ -37,12 +37,15 @@ def leer_temperaturas_teclado():
         temperaturas.append(float(temperatura.replace(',','.')))
 
 def calcular_media():
+    suma = 0
     for temperatura in temperaturas:
         suma += temperatura
     return suma/len(temperaturas)
 
 def calcular_diferencia():
-    ...
+    #temperatura minima
+    #temperatura maxima
+    #recorrer todas las temperaturas e ir modificando
 
 def mostrar_fecha():
     print(dia, "de", end=' ')
