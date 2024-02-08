@@ -31,7 +31,7 @@ stock = {
 
 def interificio_usuario():
     print("Bienvenido a Pizzeria Kaldi")
-    pizza = input(("Introduce el nombre de tu pizza: "))
+    pizza = input("Introduce el nombre de tu pizza: ")
     ingredientes = input("Introduce los ingredientes que quieres (separados por comas): ").split(",")
     return {"pizza": pizza, "ingredientes": ingredientes}
 

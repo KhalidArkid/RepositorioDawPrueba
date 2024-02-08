@@ -37,10 +37,10 @@ def opcions():
         print("5. Mostrar fecha actual")
         print("6. Salir")
         opcion = input("Introduce la opcion que quieres realizar (1-6)")
-
+        return {opcion}
 
 def fechas():
-    ...
+    for 
 
 def temperatura():
     ...
@@ -50,4 +50,3 @@ def mitjana_temperatura():
 
 def max_min():
     ...
-
