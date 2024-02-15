@@ -25,3 +25,46 @@ Té 3 'a'.
 (El programa acaba)
 """
 
+
+#TOP DOWN
+
+"""
+1. 
+"""
+
+fi = False
+
+# Problema general
+def inicio():
+    while not fi:
+        mostrar_menu()
+        tratar_opcion()
+
+# Primer nivel de descomposicion
+def mostrar_menu():
+    print("Benvingut a FraseAmbMesAs")
+    print("-------------------------------------")
+    print("[IF] Introduir frase.")
+    print("[FI] Sortir")
+
+def tratar_opcion():
+    frase = int(input("Opciones: "))
+    if frase.casefold() == "IF".casefold():
+        poner_la_frase()
+    elif frase.casefold() == "FI".casefold():
+        finalizar_ejecucion()
+    else:
+        print("Opcion incorrecta.")
+
+def poner_la_frase():
+    poner = int(input("Escribe una frase: "))
+    for p
+
+def calcular_AS():
+    ...
+
+def finalizar_ejecucion():
+    global fi
+    fi = True
+
+inicio()
