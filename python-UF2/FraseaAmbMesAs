@@ -59,7 +59,7 @@ def tratar_opcion():
         print("\nOpcion incorrecta.\n")
 
 def poner_la_frase():
-    poner = input("Escribe una frase:\n ").lower()
+    poner = input("\nEscribe una frase: ").lower()
     calcular_AS(poner)
 
 def calcular_AS(frase, max_de_AS=0):
@@ -67,8 +67,8 @@ def calcular_AS(frase, max_de_AS=0):
     if AS > max_de_AS:
         max_de_AS = AS
         frase_max = frase
-    print(f"La frase {frase_max}: ")
-    print(f"Té {max_de_AS} 'a'.")
+    print(f"\nLa frase {frase_max}: ")
+    print(f"Té {max_de_AS} 'a'.\n")
     return max_de_AS
 
 def finalizar_ejecucion():
