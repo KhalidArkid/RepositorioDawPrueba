@@ -32,6 +32,8 @@ Té 3 'a'.
 1. 
 """
 
+max_de_AS = 0
+frase_max = ""
 fi = False
 
 # Problema general
@@ -48,20 +50,26 @@ def mostrar_menu():
     print("[FI] Sortir")
 
 def tratar_opcion():
-    frase = int(input("Opciones: "))
+    frase = input("Opciones: ")
     if frase.casefold() == "IF".casefold():
         poner_la_frase()
     elif frase.casefold() == "FI".casefold():
         finalizar_ejecucion()
     else:
-        print("Opcion incorrecta.")
+        print("\nOpcion incorrecta.\n")
 
 def poner_la_frase():
-    poner = int(input("Escribe una frase: "))
-    for p
+    poner = input("Escribe una frase:\n ").lower()
+    calcular_AS(poner)
 
-def calcular_AS():
-    ...
+def calcular_AS(frase, max_de_AS=0):
+    AS = frase.count('a')
+    if AS > max_de_AS:
+        max_de_AS = AS
+        frase_max = frase
+    print(f"La frase {frase_max}: ")
+    print(f"Té {max_de_AS} 'a'.")
+    return max_de_AS
 
 def finalizar_ejecucion():
     global fi
