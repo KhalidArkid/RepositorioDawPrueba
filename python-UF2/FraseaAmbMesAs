@@ -29,7 +29,15 @@ Té 3 'a'.
 #TOP DOWN
 
 """
-1. 
+Me fumé el Top Down, lo tenia ya en la cabeza, lo adjunto ahora:
+
+0. Creacion de un menu
+    0.1 Menu con opciones para mas comodidad
+1. Gestion de texto
+    1.1 Recibir lo que introduce el usuario
+2. Calculo de los As
+    2.1 Formular una equacion que pueda identificar las 'a'
+3. Ejecutador de salida
 """
 
 max_de_AS = 0
