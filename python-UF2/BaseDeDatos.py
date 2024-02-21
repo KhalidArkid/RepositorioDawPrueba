@@ -97,6 +97,11 @@ CREATE TABLE Actor (
     Nom VARCHAR (15)
 );
 
+CREATE TABLE Genere (
+    CodiGenere INT (5) PRIMARY KEY,
+    Descripcio VARCHAR (15)
+);
+
 CREATE TABLE Pelicula (
     CodiPeli INT (5) PRIMARY KEY,
     Titol VARCHAR(15),
@@ -105,11 +110,6 @@ CREATE TABLE Pelicula (
     CodiActor INT (5),
     FOREIGN KEY (CodiGenere) REFERENCES Genere (CodiGenere),
     FOREIGN KEY (CodiActor) REFERENCES Actor (CodiActor)
-);
-
-CREATE TABLE Genere (
-    CodiGenere INT (5) PRIMARY KEY,
-    Descripcio VARCHAR (15)
 );
 
 CREATE TABLE Client (
@@ -155,43 +155,73 @@ CREATE TABLE Prestec (
     DNI CHAR (10),
     PRIMARY KEY (CodiPeli, CodiCopia, Data),
     FOREIGN KEY (CodiPeli) REFERENCES Pelicula (CodiPeli),
-    FOREIGN KEY (CodiCopia) REFERENCES Copia (CodiCopia)
+    FOREIGN KEY (CodiCopia) REFERENCES Copia (CodiCopia)    
 );
 
 
-INSERT INTO Actor() VALUES
-(1, '', ''),
-(2, '', '');
+INSERT INTO Copia(CodiPeli, CodiCopia) VALUES 
+(11, 1), 
+(12, 2), 
+(13, 3), 
+(14, 4), 
+(15, 5), 
+(16, 6);
 
-INSERT INTO Client(DNI, Nom, Adreca, Telefon) VALUES
-(4948584K, 'Xavi', 'Bon matí 48, mataró', '632417589'),
-(4945872S, 'Izan', ''),
-(4875236P, 'Khalid', '')
-
-INSERT INTO Copia() VALUES
+INSERT INTO DetallFactura(CodiFactura, LineaFactura, Descripcio, PreuUnitari, NumeroUnitats) VALUES
 (),
 ();
 
-INSERT INTO DetallFactura() VALUES
-(),
-();
+INSERT INTO Interpretada(CodiPeli, CodiActor) VALUES
+(11, 1),
+(12, 2),
+(13, 3),
+(14, 4),
+(15, 5),
+(16, 6);
 
-INSERT INTO Factura() VALUES
-(),
-();
+INSERT INTO Prestec(CodiPeli, CodiCopia, Data, DNI) VALUES
+(11, 1, '2023-03-12', '4948584K'),
+(12, 2, '2023-06-13', '4945872S'),
+(13, 3, '2023-05-16', '4875236P'),
+(14, 4, '2023-03-19', '4948585K'),
+(15, 5, '2023-01-25', '4945873S'),
+(16, 6, '2023-10-01', '4875237P');
 
-INSERT INTO Genere() VALUES
-(),
-();
+INSERT INTO Pelicula(CodiPeli, Titol, CodiGenere, SegonaPart, CodiActor) VALUES 
+(11, 'Tony',1, 0, 1), 
+(12, 'Pelao', 2, 0, 2), 
+(13, 'El Rey', 3, 0, 3), 
+(14, 'Terror', 4, 0, 4), 
+(15, 'Futuro', 5, 0, 5), 
+(16, 'Retorno', 2, 1, 6);
 
-INSERT INTO Interpretada() VALUES
-(),
-();
+INSERT INTO Factura(CodiFactura, Data, Import, DNI) VALUES
+(1, '2022-01-03', 12, '4948584K'),
+(2, '2022-01-04', 15, '4945872S'),
+(3, '2022-01-05', 10, '4875236P'),
+(4, '2022-01-06', 05, '4948585K'),
+(5, '2022-01-07', 50, '4945873S'),
+(6, '2022-01-08', 20, '4875237P');
 
-INSERT INTO Pelicula() VALUES
-(),
-();
+INSERT INTO Genere(CodiGenere, Descripcio) VALUES
+(1, 'Aventura'),
+(2, 'Comèdia'),
+(3, 'Drama'),
+(4, 'Terror'),
+(5, 'Ciència-ficció');
 
-INSERT INTO Prestec() VALUES
-(),
-();
+INSERT INTO Actor(CodiActor, Nom) VALUES  
+(1, 'Xavier'),  
+(2, 'Izan'),  
+(3, 'Khalid'),  
+(4, 'Alice'),  
+(5, 'Bob'),  
+(6, 'Carol');
+
+INSERT INTO Client(DNI, Nom, Adreca, Telefon) VALUES  
+('4948584K', 'Xavi', 'Bon mat', '632417589'),  
+('4945872S', 'Izan', 'C de la Pau', '632417589'),  
+('4875236P', 'Khalid', 'C de la Llibertat', '632417589'),  
+('4948585K', 'Alice', 'C de la Indstria', '632417589'),  
+('4945873S', 'Bob', 'C de la Ciutat', '632417589'),  
+('4875237P', 'Carol', 'C. de la Cultura', '632417589');
