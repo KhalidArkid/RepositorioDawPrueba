@@ -28,56 +28,7 @@ TOP DOWN
 1. 
 """
 
-fi = False
-repeticions = [0] * 13
-combinacions = []
-
-def inicio():
-    while not fi:
-        mostrar_menu()
-        tratar_opcion()
-
-def mostrar_menu():
-    print("Benvingut a HISTOGRAMA")
-    print("-------------------------------------")
-    print("[IF] HISTOGRAMA.")
-    print("[FI] Sortir")
-
-def tratar_opcion():
-    frase = input("Opciones: ")
-    if frase.casefold() == "IF".casefold():
-        numero_de_repes()
-    elif frase.casefold() == "FI".casefold():
-        finalizar_ejecucion()
-    else:
-        print("\nOpcion incorrecta.\n")
-
-def contar_combinaciones():
-    global repeticions
-    repeticions = [0] * 13
-    for tirada in combinacions:
-        suma = tirada[0] + tirada[1]
-        repeticions[suma - 2] += 1
-
-def numero_de_repes():
-    global repeticions
-    global combinacions
-    if repeticions < 2 or repeticions > 6:
-        print("Introduce a numero entre el 2 i el 6.")
-        return
-
-    for i in range(repeticions):
-        for j in range(repeticions):
-            if i != j:
-                combinacions.append((i+1, j+1))
-    contar_combinaciones()
-
-def las_tiradas():
-    for i in range(13):
-        print(i+2, ":", "*" * repeticions[i], sep="")
-
-def finalizar_ejecucion():
-    global fi
-    fi = True
-
-inicio()
+def generar_histograma() -> None:
+    generar_tirades():
+    mostrar_histograma()
+    mostrar_maximo()

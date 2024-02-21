@@ -169,6 +169,10 @@ INSERT INTO Copia(CodiPeli, CodiCopia) VALUES
 
 INSERT INTO DetallFactura(CodiFactura, LineaFactura, Descripcio, PreuUnitari, NumeroUnitats) VALUES
 (),
+(),
+(),
+(),
+(),
 ();
 
 INSERT INTO Interpretada(CodiPeli, CodiActor) VALUES
