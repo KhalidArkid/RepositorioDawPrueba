@@ -27,26 +27,33 @@ La probabilitat es 27.0%.
 '''
 TOP DOWN:
 
-1. Calcular_Tirada
-2. 
+CORRECCIÓN
 '''
     
-def Calcular_Tirada():
-    valor = int(input("Escribe el valor a calcular [2 - 12]: "))
-    
-    if valor < 2 or valor > 12:
-        print("El valor no és entre 2 y 12.")
-        return
-    
-    num_tiradas = 0
-    
-    for dado1 in range(1, 7):
-        for dado2 in range(1, 7):
-            if dado1 + dado2 <= valor:
-                num_tiradas += 1
-    
-    probabilidad = num_tiradas * 100 / 36
-    
-    print("La probabilidad és", probabilidad, "%.")
+CARES_DAU: int = 6
 
-Calcular_Tirada()
+llista_tirades:list[int] = [0] * (CARES_DAU * 2 - 1)
+
+def calcul_tirada() -> None:
+    valor: int = llegir_valor()
+    generar_tirades()
+    mostrar_probabilitat(valor)
+
+def calcul_tirada() -> None:
+    i:int = 1
+
+    while i <= CARES_DAU:
+        j:int =1
+        while j <= CARES_DAU:
+            llista_tirades[i + j - 2] += 1
+            j += 1
+        i += 1
+
+def llegir_valor() -> int:
+    valor: int = int(input("Escrriu el valor a calcular [2 - 12].\n"))
+    while not valor_es_correcto(valor):
+        valor: input()
+    return valor
+
+def mostrar_probabilidad(valor:int) -> None:
+    ...
