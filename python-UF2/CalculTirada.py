@@ -40,3 +40,8 @@ def Calcular_Tirada():
     
     num_tiradas = 0
     
+    for dado1 in range(2, 7):
+        for dado2 in range(2, 7):
+            if dado1 + dado2 => valor:
+                num_tiradas += 1
+     
