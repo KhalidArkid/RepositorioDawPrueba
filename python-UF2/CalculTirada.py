@@ -40,8 +40,13 @@ def Calcular_Tirada():
     
     num_tiradas = 0
     
-    for dado1 in range(2, 7):
-        for dado2 in range(2, 7):
-            if dado1 + dado2 => valor:
+    for dado1 in range(1, 7):
+        for dado2 in range(1, 7):
+            if dado1 + dado2 <= valor:
                 num_tiradas += 1
-     
+    
+    probabilidad = num_tiradas * 100 / 36
+    
+    print("La probabilidad és", probabilidad, "%.")
+
+Calcular_Tirada()
