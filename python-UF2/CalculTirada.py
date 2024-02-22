@@ -17,10 +17,19 @@ Es parteix de la descomposició del problema següent, que haureu de seguir per 
 Generar tirades.Calcular probabilitat.
 A mode de guia, la sortida hauria de ser més o menys com es mostra tot seguit:
 
-'''Escriu el valor a calcular [2 - 12]. 
+Escriu el valor a calcular [2 - 12]. 
 18 
 El valor no és entre 2 i 12. 
 5 
 La probabilitat es 27.0%.
 """
 
+'''
+TOP DOWN:
+
+1. 
+'''
+    
+def Calcular_Tirada():
+    valor = int(input("Escribe el valor a calcular [2 - 12]: "))
+    
