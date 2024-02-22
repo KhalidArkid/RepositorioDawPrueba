@@ -27,9 +27,16 @@ La probabilitat es 27.0%.
 '''
 TOP DOWN:
 
-1. 
+1. Calcular_Tirada
+2. 
 '''
     
 def Calcular_Tirada():
     valor = int(input("Escribe el valor a calcular [2 - 12]: "))
+    
+    if valor < 2 or valor > 12:
+        print("El valor no és entre 2 y 12.")
+        return
+    
+    num_tiradas = 0
     
