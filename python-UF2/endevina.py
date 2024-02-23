@@ -41,11 +41,12 @@ TOP DOWN
 2.mostrar_pistes
 3.
 '''
+
 '''
 TOP DOWN
 1. Generar combinacion (random)
 2. Mostrar pistas
-3.
+3. Mostrar resposta
 '''
 
 lletres = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
@@ -60,10 +61,8 @@ def generar_combinacio() -> None:
         combinacio_secreta.append(lletres[numero])
 
 def mostrar_pistes(usuari_combinacio: list) -> str:
-    if len(usuari_combinacio) != 5:
-        print("5 letras lelo no 80 ni 2, exactamente 5.")
-        return ""
-    
+
     pistes = []
     for i in range(5):
-        ...
+        if usuari_combinacio[i] == combinacio_secreta[i]:
+            pistes.append("O")
