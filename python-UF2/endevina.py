@@ -34,20 +34,35 @@ La resposta es [OOOO-]. Continua intentant-ho!
 > Escriu 5 lletres minúscules: mtpzx
 La resposta es [OOOOO]. Has encertat!
 '''
+'''
+TOP DOWN
+
+1.generar_combinacio
+2.mostrar_pistes
+3.
+'''
+'''
+TOP DOWN
+1. Generar combinacion (random)
+2. Mostrar pistas
+3.
+'''
+
 lletres = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-seed = 2
+combinacio_secreta = []
 
 def generar_combinacio() -> None:
-    generar_lletres()
-    mostrar_combinacio()
-    mostrar_pistes()
+    seed = 2
+    for i in range(5):
+        seed = (seed * 997) % 1000
+        random = (seed * 503) % 1000 / 1000
+        numero = int(random * len(lletres))
+        combinacio_secreta.append(lletres[numero])
 
-def generar_lletres() -> None:
-    seed = (seed * 997) %1000
-    random = (seed * 503) % 1000 / 1000
-    numero = int(random * len(generar_lletres))
-
-
-generar_lletres()
-
-
+def mostrar_pistes(usuari_combinacio: list) -> str:
+    if len(usuari_combinacio) != 5:
+        print("5 letras lelo no 80 ni 2, exactamente 5.")
+        return ""
+    
+    pistes = []
+    for i in range(5):
