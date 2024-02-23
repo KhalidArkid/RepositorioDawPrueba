@@ -66,3 +66,4 @@ def mostrar_pistes(usuari_combinacio: list) -> str:
     
     pistes = []
     for i in range(5):
+        ...
