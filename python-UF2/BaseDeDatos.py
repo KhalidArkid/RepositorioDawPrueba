@@ -58,6 +58,7 @@ CREATE TABLE COMANDA (
     FOREIGN KEY (CLIENT_COD) REFERENCES CLIENT (CLIENT_COD)
 );
 
+#inserts
 
 INSERT INTO DEPT(DEPT_NO, DNOM, LOC) VALUES
 (1, 'AQUARIUSITO', 'MARRUECOS'),
@@ -127,12 +128,13 @@ CREATE TABLE Factura (
 );
 
 CREATE TABLE DetallFactura (
-    CodiFactura INT (5),
-    LiniaFactura INT (5) PRIMARY KEY,
-    Descripcio VARCHAR (15),
-    PreuUnitari DECIMAL(9,2),
-    NumeroUnitats INT (5),
-    FOREIGN KEY (CodiFactura) REFERENCES Factura (CodiFactura)
+  CodiFactura INT,
+  LineaFactura INT,
+  Descripcio VARCHAR(255),
+  PreuUnitari DECIMAL(10,2),
+  NumeroUnitats INT,
+  PRIMARY KEY (CodiFactura, LineaFactura),
+  FOREIGN KEY (CodiFactura) REFERENCES Factura (CodiFactura)
 );
 
 CREATE TABLE Copia (
@@ -158,6 +160,54 @@ CREATE TABLE Prestec (
     FOREIGN KEY (CodiCopia) REFERENCES Copia (CodiCopia)    
 );
 
+#inserts
+
+INSERT INTO Factura(CodiFactura, Data, Import, DNI) VALUES
+(1, '2022-01-03', 12, '4948584K'),
+(2, '2022-01-04', 15, '4945872S'),
+(3, '2022-01-05', 10, '4875236P'),
+(4, '2022-01-06', 05, '4948585K'),
+(5, '2022-01-07', 50, '4945873S'),
+(6, '2022-01-08', 20, '4875237P');
+
+INSERT INTO Genere(CodiGenere, Descripcio) VALUES
+(1, 'Aventura'),
+(2, 'Comedia'),
+(3, 'Drama'),
+(4, 'Terror'),
+(5, 'Ciencia-ficcio');
+
+INSERT INTO Actor(CodiActor, Nom) VALUES  
+(1, 'Xavier'),  
+(2, 'Izan'),  
+(3, 'Khalid'),  
+(4, 'Alice'),  
+(5, 'Bob'),  
+(6, 'Carol');
+
+INSERT INTO Client(DNI, Nom, Adreca, Telefon) VALUES  
+('4948584K', 'Xavi', 'Bon mat', '632454567'),  
+('4945872S', 'Izan', 'C de la Pau', '632947587'),  
+('4875236P', 'Khalid', 'C de la Llibertat', '632147532'),  
+('4948585K', 'Alice', 'C de la Indstria', '632417894'),  
+('4945873S', 'Bob', 'C de la Ciutat', '632412198'),  
+('4875237P', 'Carol', 'C. de la Cultura', '632445569');
+
+INSERT INTO Pelicula(CodiPeli, Titol, CodiGenere, SegonaPart, CodiActor) VALUES 
+(11, 'Tony',1, 0, 1), 
+(12, 'Pelao', 2, 0, 2), 
+(13, 'El Rey', 3, 0, 3), 
+(14, 'Terror', 4, 0, 4), 
+(15, 'Futuro', 5, 0, 5), 
+(16, 'Retorno', 2, 1, 6);
+
+INSERT INTO DetallFactura(CodiFactura, LineaFactura, Descripcio, PreuUnitari, NumeroUnitats) VALUES
+(1, 1, 'Tony', 12, 1),
+(2, 2, 'Pelao', 15, 1),
+(3, 3, 'El Rey', 10, 1),
+(4, 4, 'Terror', 5, 1),
+(5, 5, 'Futuro', 50, 1),
+(6, 6, 'Retorno', 20, 1);
 
 INSERT INTO Copia(CodiPeli, CodiCopia) VALUES 
 (11, 1), 
@@ -166,14 +216,6 @@ INSERT INTO Copia(CodiPeli, CodiCopia) VALUES
 (14, 4), 
 (15, 5), 
 (16, 6);
-
-INSERT INTO DetallFactura(CodiFactura, LineaFactura, Descripcio, PreuUnitari, NumeroUnitats) VALUES
-(),
-(),
-(),
-(),
-(),
-();
 
 INSERT INTO Interpretada(CodiPeli, CodiActor) VALUES
 (11, 1),
@@ -190,42 +232,3 @@ INSERT INTO Prestec(CodiPeli, CodiCopia, Data, DNI) VALUES
 (14, 4, '2023-03-19', '4948585K'),
 (15, 5, '2023-01-25', '4945873S'),
 (16, 6, '2023-10-01', '4875237P');
-
-INSERT INTO Pelicula(CodiPeli, Titol, CodiGenere, SegonaPart, CodiActor) VALUES 
-(11, 'Tony',1, 0, 1), 
-(12, 'Pelao', 2, 0, 2), 
-(13, 'El Rey', 3, 0, 3), 
-(14, 'Terror', 4, 0, 4), 
-(15, 'Futuro', 5, 0, 5), 
-(16, 'Retorno', 2, 1, 6);
-
-INSERT INTO Factura(CodiFactura, Data, Import, DNI) VALUES
-(1, '2022-01-03', 12, '4948584K'),
-(2, '2022-01-04', 15, '4945872S'),
-(3, '2022-01-05', 10, '4875236P'),
-(4, '2022-01-06', 05, '4948585K'),
-(5, '2022-01-07', 50, '4945873S'),
-(6, '2022-01-08', 20, '4875237P');
-
-INSERT INTO Genere(CodiGenere, Descripcio) VALUES
-(1, 'Aventura'),
-(2, 'Comèdia'),
-(3, 'Drama'),
-(4, 'Terror'),
-(5, 'Ciència-ficció');
-
-INSERT INTO Actor(CodiActor, Nom) VALUES  
-(1, 'Xavier'),  
-(2, 'Izan'),  
-(3, 'Khalid'),  
-(4, 'Alice'),  
-(5, 'Bob'),  
-(6, 'Carol');
-
-INSERT INTO Client(DNI, Nom, Adreca, Telefon) VALUES  
-('4948584K', 'Xavi', 'Bon mat', '632417589'),  
-('4945872S', 'Izan', 'C de la Pau', '632417589'),  
-('4875236P', 'Khalid', 'C de la Llibertat', '632417589'),  
-('4948585K', 'Alice', 'C de la Indstria', '632417589'),  
-('4945873S', 'Bob', 'C de la Ciutat', '632417589'),  
-('4875237P', 'Carol', 'C. de la Cultura', '632417589');

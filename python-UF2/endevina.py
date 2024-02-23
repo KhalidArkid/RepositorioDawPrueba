@@ -66,3 +66,26 @@ def mostrar_pistes(usuari_combinacio: list) -> str:
     for i in range(5):
         if usuari_combinacio[i] == combinacio_secreta[i]:
             pistes.append("O")
+        elif usuari_combinacio[i] in combinacio_secreta:
+            pistes.append("X")
+        else:
+            pistes.append(".")
+    return "".join(pistes)
+
+def mostrar_resposta() -> None:
+    generar_combinacio()
+    while True:
+        usuari_combinacio = list(input("Escriu 5 lletres minúscules: "))
+        
+        if len(usuari_combinacio) != 5:
+            print("5 lletres PELELE no 80 ni 2, exactament 5 lletres.")
+            continue
+        
+        pistes = mostrar_pistes(usuari_combinacio)
+        print(f"La resposta és {pistes}. Continua intentant-ho com l'Atletic de Madrid!")
+        
+        if pistes == "OOOOO":
+            print("Visca Barça, enhorabona, CHAMPIONSS!")
+            break
+
+mostrar_resposta()
