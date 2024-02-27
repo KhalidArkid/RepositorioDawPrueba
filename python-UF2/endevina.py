@@ -34,13 +34,6 @@ La resposta es [OOOO-]. Continua intentant-ho!
 > Escriu 5 lletres minúscules: mtpzx
 La resposta es [OOOOO]. Has encertat!
 '''
-'''
-TOP DOWN
-
-1.generar_combinacio
-2.mostrar_pistes
-3.
-'''
 
 '''
 TOP DOWN
