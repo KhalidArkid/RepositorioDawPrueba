@@ -34,7 +34,7 @@ fun leerOpcio(): Int {
 
 fun afegirViatge() {
    print("Introdueix la destinaco del viatge: ")
-   val destinacio: String = readLine()?
+   val destinacio: String = readLine()!!
    print("Introudeix el preu del viatge: ")
    val preu: Double = readLine()?.toDoubleOrNull()?: 0.0
    println(destinacio)
