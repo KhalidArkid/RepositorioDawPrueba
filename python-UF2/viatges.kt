@@ -15,65 +15,41 @@
             - Executar l'acció associada a l'opció seleccionada per l'usuari.
 */
 
-
-fun mostrar_Menu() {
-    println("1. Afegir viatge")
-    println("2. Tenir informació dels viatges")
-    println("3. Tenir informació d'un viatge en específic")
-    println("4. Registrar el client")
-    println("5. Fer reserva")
-    println("6. Obtenir informació de reserva")
-    println("7. Sortir")
+fun mostrarMenu() {
+   println("--- Menu ---")
+   println("1. Afegiu un viatge")
+   println("2. Consultar viatges")
+   println("3. Detalls viatges")
+   println("4. Registrar Clients")
+   println("5. Fer reserva")
+   println("6. Detalls reserva")
 }
 
-data object Viatge {
-    val id: Int
-    val destinacio: String
-    val dataInici: String
-    val dataFi: String
+fun leerOpcio(): Int {
+   print("Selecciona una opcio:")
+   val opcio:Int = readLine()!!.toIntOrNull()!!
+
+   return opcio
 }
 
-data object Client {
-    val id: Int
-    val nom: String
-    val email: String
+fun afegirViatge() {
+   print("Introdueix la destinaco del viatge: ")
+   val destinacio: String = readLine()
+   print("Introudeix el preu del viatge: ")
+   val preu: Double = readLine()?.toDoubleOrNull()?: 0.0
+   println(destinacio)
+   println(preu)
 }
 
-data object Reserva {
-    val id: Int
-    val clientId: Int
-    val viatgeId: Int
+fun executarOpcio(opcio: Int) {
+   when (opcio) {
+      1 -> afegirViatge()
+      else -> println("Opcio no valida")
+   }
 }
 
-val viatges = mutableListOf<Viatge>(
-    Viatge(id = 1, destinacio = "Tokyo", dataInici = "2023-05-01", dataFi = "2023-05-12"),
-    Viatge(id = 2, destinacio = "Cancun", dataInici = "2024-03-01", dataFi = "2024-04-10")
-)
-
-val clients = mutableListOf<Client>(
-    Client(id = 1, nom = "Carlos Perez", email = "carlo23@gmail.com"),
-    Client(id = 2, nom = "Marta Diaz", email = "marta22@gmail.com")
-)
-
-val reserves = mutableListOf<Reserva>(
-    Reserva(id = 1, ID_client = 1, ID_viatge = 1),
-    Reserva(id = 2, ID_client = 2, ID_viatge = 2)
-)
-
-fun afegir_Viatge(viatge: Viatge) {
-}
-
-fun resum_Viatges(): {
-}
-
-fun detalls_Viatge(ID_viatge: Int):  {
-}
-
-fun afegir_Client(client: Client): Int {
-}
-
-fun fer_Reserva(clientId: Int, ID_viatge: Int): Int {
-}
-
-fun detalls_Reserva(ID_reserva: Int):  {
+fun main() {
+   mostrarMenu()
+   val opcio = leerOpcio()
+   println(opcio)
 }
