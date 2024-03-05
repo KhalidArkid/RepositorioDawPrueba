@@ -37,8 +37,7 @@ fun afegirViatge() {
    val destinacio: String = readLine()!!
    print("Introudeix el preu del viatge: ")
    val preu: Double = readLine()?.toDoubleOrNull()?: 0.0
-   println(destinacio)
-   println(preu)
+   val viatge: 
 }
 
 fun executarOpcio(opcio: Int) {
