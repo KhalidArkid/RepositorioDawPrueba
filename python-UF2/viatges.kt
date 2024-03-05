@@ -16,6 +16,15 @@
 */
 
 
+fun mostrar_Menu() {
+    println("1. Afegir viatge")
+    println("2. Tenir informació dels viatges")
+    println("3. Tenir informació d'un viatge en específic")
+    println("4. Registrar el client")
+    println("5. Fer reserva")
+    println("6. Obtenir informació de reserva")
+    println("7. Sortir")
+}
 
 data object Viatge {
     val id: Int
@@ -44,6 +53,11 @@ val viatges = mutableListOf<Viatge>(
 val clients = mutableListOf<Client>(
     Client(id = 1, nom = "Carlos Perez", email = "carlo23@gmail.com"),
     Client(id = 2, nom = "Marta Diaz", email = "marta22@gmail.com")
+)
+
+val reserves = mutableListOf<Reserva>(
+    Reserva(id = 1, clientId = 1, viatgeId = 1),
+    Reserva(id = 2, clientId = 2, viatgeId = 2)
 )
 
 
