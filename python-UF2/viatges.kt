@@ -56,8 +56,24 @@ val clients = mutableListOf<Client>(
 )
 
 val reserves = mutableListOf<Reserva>(
-    Reserva(id = 1, clientId = 1, viatgeId = 1),
-    Reserva(id = 2, clientId = 2, viatgeId = 2)
+    Reserva(id = 1, ID_client = 1, ID_viatge = 1),
+    Reserva(id = 2, ID_client = 2, ID_viatge = 2)
 )
 
+fun afegir_Viatge(viatge: Viatge) {
+}
 
+fun resum_Viatges(): {
+}
+
+fun detalls_Viatge(ID_viatge: Int):  {
+}
+
+fun afegir_Client(client: Client): Int {
+}
+
+fun fer_Reserva(clientId: Int, ID_viatge: Int): Int {
+}
+
+fun detalls_Reserva(ID_reserva: Int):  {
+}
