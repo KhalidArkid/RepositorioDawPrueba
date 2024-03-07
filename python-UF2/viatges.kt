@@ -24,31 +24,34 @@ fun mostrarMenu() {
    println("5. Fer reserva")
    println("6. Detalls reserva")
 }
-
 fun leerOpcio(): Int {
    print("Selecciona una opcio:")
    val opcio:Int = readLine()!!.toIntOrNull()!!
-
    return opcio
 }
-
 fun afegirViatge() {
    print("Introdueix la destinaco del viatge: ")
    val destinacio: String = readLine()!!
    print("Introudeix el preu del viatge: ")
    val preu: Double = readLine()?.toDoubleOrNull()?: 0.0
+   println(destinacio)
+   println(preu)
    val viatge: 
 }
 
 fun executarOpcio(opcio: Int) {
    when (opcio) {
-      1 -> afegirViatge()
+      1 -> afegirViatge(viatges)
+      2 -> consultarViatge(viatges)
       else -> println("Opcio no valida")
    }
 }
 
 fun main() {
+   var viatges: MutableList<Map<String, Double>> = MutableListOf<Map<String, Double>>()
    mostrarMenu()
-   val opcio = leerOpcio()
-   println(opcio)
+   val opcio: Int = leerOpcio()
+   println(opcio, viatges)
 }
+
+fun consultarViatge
