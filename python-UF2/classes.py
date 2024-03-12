@@ -1,10 +1,10 @@
-class coordenada:
+# Coordenada inicial
+class Coordenada:
     def __init__(self):
-    # Coordenada inicial
-    self.x: int = 0
-    self.y: int = 0
+        self.x: int = 0
+        self.y: int = 0
 
-    # Programa principal
+# Programa principal
     def moure_dreta(self):
         self.x += 1
 
@@ -17,10 +17,14 @@ class coordenada:
     def moure_avall(self):
         self.y -= 1
 
-class graella:
+class Main:
     # Executar moviments
-    coordenada = moure_dreta(coordenada)
-    print(f"Nova coordenada després de moure a la dreta: {coordenada}")
+    def __init__(self):
+        coordenada: Coordenada = Coordenada()
+        coordenada.moure_dreta()
+        print(f"Nova coordenada després de moure a la dreta: ({coordenada.x}, {coordenada.y})")
 
-    coordenada = moure_amunt(coordenada)
-    print(f"Nova coordenada després de moure amunt: {coordenada}")
+        coordenada.moure_amunt()
+        print(f"Nova coordenada després de moure amunt: ({coordenada.x}, {coordenada.y})")
+
+Main()
