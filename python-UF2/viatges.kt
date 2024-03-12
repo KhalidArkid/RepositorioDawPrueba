@@ -23,7 +23,9 @@ fun mostrarMenu() {
    println("4. Registrar Clients")
    println("5. Fer reserva")
    println("6. Detalls reserva")
+   println("7. Sortir de l'aplicacio")
 }
+
 fun leerOpcio(): Int {
    print("Selecciona una opcio:")
    val opcio:Int = readLine()!!.toIntOrNull()!!
@@ -36,22 +38,64 @@ fun afegirViatge() {
    val preu: Double = readLine()?.toDoubleOrNull()?: 0.0
    println(destinacio)
    println(preu)
-   val viatge: 
+   val viatge: Map<String, Double> = MapOf(destinacio to preu)
 }
 
-fun executarOpcio(opcio: Int) {
+fun ConsultarViatge(viatges: MuatbleList<Map<String, Double>>){
+    println("Llista de viatges:")
+    viatges.forEach{ viatge ->
+        viatge.forEach { (destinacio,preu) ->
+            println("Destinacio: ${destinacio}, Preu: ${preu}")
+        }
+    }
+}
+
+fun demanarDesrtinacio(): String {
+   print("Introdueix desti: ")
+   val destinacio: String = readLine()!!
+   return destinacio
+}
+
+fun detallsViatge(viatges: MutableList<Map<String, Double>>) {
+   val destino: String = demanarDesrtinacio()
+   val viatge = viatges.find {it.keys.find { it == destinacio } != null}
+   if (viatge != null) {
+      println("Detalls del viatge:")
+      viatge.forEach { (desti, preu) ->
+         println("-Destinacio: ${desti}")
+         println("-Preu: ${preu}")
+      }
+   }  else {
+      println("No hi ha cap viatge amb aquest desti")   
+   }   
+}
+
+fun registrarClient(clients: MuatbleList<Pair<Int, String>>) {
+   val nom: String = readLine() ?: ""
+   val id: Int = readLine
+}
+
+fun executarOpcio(opcio: Int, viatges: MutableList<Map<String, Double>>) {
    when (opcio) {
       1 -> afegirViatge(viatges)
       2 -> consultarViatge(viatges)
+      3 -> detallsViatge(viatges)
+      4 -> registrarClient()
+      7 -> println("Sortint de l'aplicacio")
       else -> println("Opcio no valida")
    }
 }
 
-fun main() {
-   var viatges: MutableList<Map<String, Double>> = MutableListOf<Map<String, Double>>()
-   mostrarMenu()
-   val opcio: Int = leerOpcio()
-   println(opcio, viatges)
+fun ferReserva() {
+
 }
 
-fun consultarViatge
+fun main() {
+   var viatges: MutableList<Map<String, Double>> = MutableListOf<Map<String, Double>>()
+   var clients: MutableList<Map<Int, String>> = MutableListOf<Map<String, Double>>()
+   do {
+   mostrarMenu()
+   val opcio: Int = leerOpcio()
+   executarOpcio(opcio, viatges)
+   } while (opcio != 7)
+}
