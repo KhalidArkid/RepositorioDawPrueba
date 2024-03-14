@@ -1,18 +1,21 @@
+class Llibre (var nom: String, var autor: String, var quantitat: Int){
+    fun informacio() {}
+}
+
+
 class main() {
-    val llibre = Llibre()
-    val soci = Soci()
-    val prestec = Prestec()
+    val llibre1 = Llibre("Paco", "Zawar", 5)
+    val llibre2 = Llibre("PAMPAM", "Adil", 2)
+    
+    val soci1 = Soci("Pedro", "Panflina", "123")
+    val soci2 = Soci("Marco", "Polo", "456")
+    
+    val prestec1 = Prestec(llibre1, soci1, "2024-03-14")
+    val prestec2 = Prestec(llibre2, soci2, "2023-03-14")
 
-    prestec.registrarPrestec(llibre, soci, Date())
-
-    println("Informació del llibre:")
-    llibre.obtenirInformacio(llibre)
-
-    println("Informació del soci:")
-    soci.obtenirInformacio(soci)
-
-    println("Informació del préstec:")
-    prestec.obtenirInformacio(prestec)
-
-    prestec.retornarPrestec(llibre)
+    prestec1.registrarPrestec()
+    llibre1.informacio()
+    soci2.informacio()
+    prestec1.retornarPrestec()
+    llibre1.informacio()
 }

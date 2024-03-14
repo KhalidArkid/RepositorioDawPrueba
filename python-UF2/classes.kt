@@ -1,5 +1,5 @@
 // Coordenada inicial
-class Coordenada {
+class Coordenada (var x: Int, var y: Int) {
     var x: Int = 0
     var y: Int = 0
 }
