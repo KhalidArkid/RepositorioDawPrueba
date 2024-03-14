@@ -4,15 +4,6 @@ class Coordenada {
     var y: Int = 0
 }
 
-// Programa principal
-fun main() {
-    val coordenada = Coordenada()
-    coordenada.moure_dreta()
-    println("Nova coordenada després de moure a la dreta: (${coordenada.x}, ${coordenada.y})")
-
-    coordenada.moure_amunt()
-    println("Nova coordenada després de moure amunt: (${coordenada.x}, ${coordenada.y})")
-}
 
 // Funciones de movimiento
 fun Coordenada.moure_dreta() {
@@ -30,3 +21,16 @@ fun Coordenada.moure_amunt() {
 fun Coordenada.moure_avall() {
     y -= 1
 }
+
+
+// Programa principal
+fun main() {
+    val coordenada = Coordenada()
+    coordenada.moure_dreta()
+    println("Nova coordenada després de moure a la dreta: (${coordenada.x}, ${coordenada.y})")
+
+    coordenada.moure_amunt()
+    println("Nova coordenada després de moure amunt: (${coordenada.x}, ${coordenada.y})")
+}
+
+
