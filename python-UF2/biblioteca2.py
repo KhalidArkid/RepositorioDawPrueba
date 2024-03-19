@@ -10,7 +10,7 @@ while True:
 
     opcion = input("Seleccione una opción: ")
 
-    def agregar_libro(biblioteca):
+def agregar_libro(biblioteca):
     if opcion == "1":
         titulo = input("Ingrese el título del libro: ")
         autor = input("Ingrese el autor del libro: ")
